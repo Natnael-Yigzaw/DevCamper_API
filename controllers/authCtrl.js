@@ -18,6 +18,7 @@ exports.register = asyncHandler(async (req, res, next) => {
 
   sendTokenResponse(user, 200, res);
 });
+
 // @desc      Login user
 // @route     POST /api/v1/auth/login
 // @access    Public
@@ -38,6 +39,24 @@ exports.login = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse("Invalid credentials", 401));
   }
   sendTokenResponse(user, 200, res);
+});
+
+// @desc      Fogot password
+// @route     POST /api/v1/auth/forgotpassword
+// @access    Public
+exports.forgotPassword = asyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(new ErrorResponse("There is no user with that email", 404));
+  }
+
+  // Get Reset Token
+  const resetToken = user.getResetPasswordToken();
+
+  console.log(resetToken);
+
+  await user.save({ validateBeforeSave: false });
 });
 
 // Get Token from the model, create cookie and send response
