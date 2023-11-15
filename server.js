@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
+const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 require("colors");
 const dotenv = require("dotenv");
@@ -21,6 +22,7 @@ connectDb();
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(fileUpload());
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
@@ -28,8 +30,10 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 const bootCampRoute = require("./routes/bootcampRoute");
 const courseRoute = require("./routes/courseRoute");
+const authRoute = require("./routes/authRoute");
 app.use("/api/v1/bootcamps", bootCampRoute);
 app.use("/api/v1/courses", courseRoute);
+app.use("/api/v1/auth", authRoute);
 
 // Error handling middleware
 app.use(errorHandler);

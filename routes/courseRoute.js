@@ -3,6 +3,7 @@ const router = express.Router({ mergeParams: true });
 const courseController = require("../controllers/courseCtrl");
 const Course = require("../models/course");
 const advancedResults = require("../middleware/advancedResults");
+const { protect, authorize } = require("../middleware/auth");
 
 // Route for handling courses
 router
@@ -14,13 +15,17 @@ router
     }),
     courseController.getCourses
   )
-  .post(courseController.addCourse);
+  .post(protect, authorize("publisher", "admin"), courseController.addCourse);
 
 // Routes for handling individual courses by ID
 router
   .route("/:id")
   .get(courseController.getCourse)
-  .put(courseController.updateCourse)
-  .delete(courseController.deleteCourse);
+  .put(protect, authorize("publisher", "admin"), courseController.updateCourse)
+  .delete(
+    protect,
+    authorize("publisher", "admin"),
+    courseController.deleteCourse
+  );
 
 module.exports = router;
