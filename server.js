@@ -31,9 +31,11 @@ app.use(express.static(path.join(__dirname, "public")));
 const bootCampRoute = require("./routes/bootcampRoute");
 const courseRoute = require("./routes/courseRoute");
 const authRoute = require("./routes/authRoute");
+const userRoute = require("./routes/userRoute");
 app.use("/api/v1/bootcamps", bootCampRoute);
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/users", userRoute);
 
 // Error handling middleware
 app.use(errorHandler);
