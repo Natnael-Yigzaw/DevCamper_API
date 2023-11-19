@@ -11,9 +11,13 @@ const Bootcamp = require("../models/Bootcamp");
 
 // Import Routes
 const courseRouter = require("./courseRoute");
+const reviewRouter = require("./reviewRoute");
 
 // Mount Course Router
 router.use("/:bootcampId/course", courseRouter);
+
+// Mount Review Router
+router.use("/:bootcampId/review", reviewRouter);
 
 // Bootcamp Routes
 router
