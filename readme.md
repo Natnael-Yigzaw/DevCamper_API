@@ -29,10 +29,17 @@ npm install
 4. **Setup Environment variables:**
 
 ```
-Rename .env.example to .env and then set up the necessary environment variables according to the provided guide.
+Rename .env.example to .env
 ```
 
-5. **Start the server**:
+5. **Seed Data -i(for import) -d(for destroy)**
+
+```
+node seeder.js -i
+node seeder.js -d
+```
+
+6. **Start the server**:
 
 ```
 npm start
@@ -52,4 +59,4 @@ npm start
 
 ## Contributing
 
-> Contributions are welcome! If you find any issues or want to add new features, please open an issue or submit a pull request.
+> Contributions are welcome!
