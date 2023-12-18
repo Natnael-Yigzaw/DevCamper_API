@@ -1,9 +1,9 @@
 [
     {
       "_id": "5d7a514b5d2c12c7449be042",
-      "name": "Admin Account",
+      "name": "Admin",
       "email": "admin@gmail.com",
-      "role": "user",
+      "role": "admin",
       "password": "123456"
     },
     {
