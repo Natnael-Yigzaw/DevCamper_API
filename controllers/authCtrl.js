@@ -115,13 +115,13 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
     "host"
   )}/api/v1/auth/resetpassword/${resetToken}`;
 
-  const message = `You are receiving this email because you (or someone else) has requested the reset of a password for your account. Please make a put request to: \n\n ${resetUrl}`;
+  const text = `You are receiving this email because you (or someone else) has requested the reset of a password for your account. Please make a put request to: \n\n ${resetUrl}`;
 
   try {
     await sendEmail({
       email: user.email,
       subject: "Password reset token",
-      message,
+      text,
     });
     res.status(200).json({ success: true, data: "Email sented" });
   } catch (error) {
