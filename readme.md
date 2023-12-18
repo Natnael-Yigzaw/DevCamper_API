@@ -2,18 +2,9 @@
 
 > Welcome to the DevCamper_API! This is the backend API for the DevCamper application, a comprehensive bootcamp directory website. This API is designed to handle various functionalities related to managing and retrieving information about bootcamps, courses, reviews, and users within the DevCamper ecosystem.
 
-## Table of Contents
-
-1. [Getting Started](#getting-started)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [API Endpoints](#api-endpoints)
-5. [Authentication](#authentication)
-6. [Contributing](#contributing)
-
 ## Getting Started
 
-Before using the DevCamper_API, make sure you have Node.js and npm installed on your machine.
+> Before using the DevCamper_API, make sure you have Node.js and npm installed on your machine.
 
 ## Installation
 
@@ -37,7 +28,9 @@ npm install
 
 4. **Setup Environment variables:**
 
-> Rename .env.example to .env and then set up the necessary environment variables according to the provided guide.
+```
+Rename .env.example to .env and then set up the necessary environment variables according to the provided guide.
+```
 
 5. **Start the server**:
 
@@ -51,7 +44,7 @@ npm start
 
 ## API Endpoints
 
-Detailed information about the available API endpoints can be found in the http://localhost:3000/
+> Detailed information about the available API endpoints can be found in the http://localhost:3000/
 
 ## Authentication
 
@@ -59,4 +52,4 @@ Detailed information about the available API endpoints can be found in the http:
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or want to add new features, please open an issue or submit a pull request.
+> Contributions are welcome! If you find any issues or want to add new features, please open an issue or submit a pull request.
