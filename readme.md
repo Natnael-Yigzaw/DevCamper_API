@@ -37,7 +37,7 @@ npm install
 
 4. **Setup Environment variables:**
 
-> Create a `.env` file in the root directory and provide the necessary informations.
+> Rename .env.example to .env and then set up the necessary environment variables according to the provided guide.
 
 5. **Start the server**:
 
